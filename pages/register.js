@@ -12,7 +12,7 @@ const Register = () => {
   const { name, email, password, cf_password } = userData;
 
   const { state, dispatch } = useContext(DataContext);
-  const { auth } = state;
+  // const { auth } = state;
 
   const router = useRouter();
 
@@ -37,9 +37,9 @@ const Register = () => {
     return dispatch({ type: "NOTIFY", payload: { success: res.msg } });
   };
 
-  useEffect(() => {
-    if (Object.keys(auth).length !== 0) router.push("/");
-  }, [auth]);
+  // useEffect(() => {
+  //   if (Object.keys(auth).length !== 0) router.push("/");
+  // }, [auth]);
 
   return (
     <div>
@@ -110,7 +110,7 @@ const Register = () => {
 
         <p className="my-2">
           Already have an account?{" "}
-          <Link href="/signin">
+          <Link href="/sign-in">
             <a style={{ color: "crimson" }}>Login Now</a>
           </Link>
         </p>
